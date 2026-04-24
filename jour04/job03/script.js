@@ -28,6 +28,12 @@ document.getElementById("filter").addEventListener("click", function () {
               <p><strong>ID :</strong> ${pokemon.id}</p>
               <p><strong>Nom :</strong> ${pokemon.name.french}</p>
               <p><strong>Type :</strong> ${pokemon.type.join(", ")}</p>
+              <p><strong>HP :</strong> ${pokemon.base.HP}</p>
+              <p><strong>Attack :</strong> ${pokemon.base.Attack}</p>
+              <p><strong>Defense :</strong> ${pokemon.base.Defense}</p>
+              <p><strong>Sp. Attack :</strong> ${pokemon.base["Sp. Attack"]}</p>
+              <p><strong>Sp. Defense :</strong> ${pokemon.base["Sp. Defense"]}</p>
+              <p><strong>Speed :</strong> ${pokemon.base.Speed}</p>
             </div>
             <hr>
           `;
@@ -35,7 +41,7 @@ document.getElementById("filter").addEventListener("click", function () {
       }
     })
     .catch(function (error) {
-      resultDiv.innerHTML = "<p>Erreur lors du chargement du fichier JSON</p>";
-      console.error(error);
+      console.error("Erreur :", error);
+      resultDiv.innerHTML = "<p>Erreur lors du chargement du fichier JSON.</p>";
     });
 });
